@@ -23,7 +23,6 @@ namespace Lib
             myWebDriver.FindElement(By.LinkText("New repository")).Click();
             myWebDriver.FindElement(By.Id("repository_name")).SendKeys("MyDirectory");
             myWebDriver.FindElement(By.XPath("//*[@class='button primary first-in-line']")).Click();
-
         }
     }
 }
