@@ -15,6 +15,7 @@ namespace Lib.Base
 
         public static void InitPage<T>(T pageClass) where T : BaseObject
         {
+            Selenium.WindowMaximize();
             PageFactory.InitElements(Driver, pageClass);
         }
     }
