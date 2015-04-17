@@ -47,6 +47,6 @@ namespace Lib.Pages
 
         public const string NEW_REPOSITORY_BUTTON = "New repository";
         public const string REPOSITORY_NAME_INPUT = "repository_name";
-        public const string CREATE_REPOSITORY_BUTTON = "//*[@class='button primary first-in-line']";
+        public const string CREATE_REPOSITORY_BUTTON = "//button[@type=\"submit\"]";
     }
 }

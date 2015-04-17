@@ -16,6 +16,7 @@ namespace Lib.Tests
         [TestFixtureSetUp]
         public void beforeClass()
         {
+            Logger.Setup();
             var executingAssembly = Assembly.GetExecutingAssembly();
             var path = String.Format("{0}/{1}", System.IO.Path.GetDirectoryName(executingAssembly.Location), "chromedriver.exe");
             Environment.SetEnvironmentVariable("webdriver.chrome.driver", path);
@@ -24,19 +25,23 @@ namespace Lib.Tests
             Selenium = new WebDriverBackedSelenium(Driver, Utils.baseUrl);
             Selenium.Start();
             Selenium.WindowMaximize();
+            log.Info("beforeClass() complete");
         }
 
         [SetUp]
         public void beforeTest()
         {
+
+            log.Info("beforeTest() complete");
             Driver.Navigate().GoToUrl(Utils.baseUrl);
         }
 
         [TestFixtureTearDown]
         public void afterClass()
         {
+            log.Info("afterClass() complete");
             Driver.Close();
-            Selenium.Close();
+            Selenium.Close();//exception
         }
     }
 }

@@ -9,7 +9,7 @@ using NUnit.Framework;
 namespace Lib.Tests
 {
     [TestFixture]
-    class MainTest:BaseTest
+    public class MainTest:BaseTest
     {
         private static Helper helper = new Helper();
 
