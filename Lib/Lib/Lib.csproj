@@ -56,8 +56,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Selenium.WebDriver.2.45.0\lib\net40\WebDriver.dll</HintPath>
     </Reference>
-    <Reference Include="WebDriver.Support">
-      <HintPath>..\..\..\..\..\Downloads\selenium-dotnet-2.45.0\net40\WebDriver.Support.dll</HintPath>
+    <Reference Include="WebDriver.Support, Version=2.45.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Selenium.Support.2.45.0\lib\net40\WebDriver.Support.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
