@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Lib.Base;
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.IE;
 using Selenium;
 
 namespace Lib.Tests
@@ -17,14 +18,14 @@ namespace Lib.Tests
         public void beforeClass()
         {
             Logger.Setup();
-            var executingAssembly = Assembly.GetExecutingAssembly();
-            var path = String.Format("{0}/{1}", System.IO.Path.GetDirectoryName(executingAssembly.Location), "chromedriver.exe");
-            Environment.SetEnvironmentVariable("webdriver.chrome.driver", path);
-            var opts = new ChromeOptions
-            {
-                BinaryLocation = @"c:\Users\Арсений\AppData\Local\Google\Chrome\Application\chrome.exe"
-            };
-            Driver = new ChromeDriver(ChromeDriverService.CreateDefaultService(),opts,TimeSpan.FromMinutes(3));
+            //var executingAssembly = Assembly.GetExecutingAssembly();
+            //var path = String.Format("{0}/{1}", System.IO.Path.GetDirectoryName(executingAssembly.Location), "chromedriver.exe");
+            //Environment.SetEnvironmentVariable("webdriver.chrome.driver", path);
+            //var opts = new ChromeOptions
+            //{
+            //    BinaryLocation = @"c:\Users\Арсений\AppData\Local\Google\Chrome\Application\chrome.exe"
+            //};
+            Driver = new InternetExplorerDriver();
             Selenium = new WebDriverBackedSelenium(Driver, Utils.baseUrl);
             Selenium.Start();
             Selenium.WindowMaximize();
