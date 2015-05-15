@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Lib.Base;
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using Selenium;
 
@@ -21,11 +22,9 @@ namespace Lib.Tests
             //var executingAssembly = Assembly.GetExecutingAssembly();
             //var path = String.Format("{0}/{1}", System.IO.Path.GetDirectoryName(executingAssembly.Location), "chromedriver.exe");
             //Environment.SetEnvironmentVariable("webdriver.chrome.driver", path);
-            //var opts = new ChromeOptions
-            //{
-            //    BinaryLocation = @"c:\Users\Арсений\AppData\Local\Google\Chrome\Application\chrome.exe"
-            //};
-            Driver = new InternetExplorerDriver();
+            var path = @"c:\Program Files (x86)\Mozilla Firefox\firefox.exe";
+            var binary = new FirefoxBinary(path);
+            Driver = new FirefoxDriver(binary,new FirefoxProfile());
             Selenium = new WebDriverBackedSelenium(Driver, Utils.baseUrl);
             Selenium.Start();
             Selenium.WindowMaximize();
