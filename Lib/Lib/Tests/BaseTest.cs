@@ -24,7 +24,7 @@ namespace Lib.Tests
             {
                 BinaryLocation = @"c:\Users\Арсений\AppData\Local\Google\Chrome\Application\chrome.exe"
             };
-            Driver = new ChromeDriver(ChromeDriverService.CreateDefaultService(),opts,TimeSpan.FromSeconds(120));
+            Driver = new ChromeDriver(ChromeDriverService.CreateDefaultService(),opts,TimeSpan.FromMinutes(3));
             Selenium = new WebDriverBackedSelenium(Driver, Utils.baseUrl);
             Selenium.Start();
             Selenium.WindowMaximize();
