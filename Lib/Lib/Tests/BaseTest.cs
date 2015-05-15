@@ -20,8 +20,11 @@ namespace Lib.Tests
             var executingAssembly = Assembly.GetExecutingAssembly();
             var path = String.Format("{0}/{1}", System.IO.Path.GetDirectoryName(executingAssembly.Location), "chromedriver.exe");
             Environment.SetEnvironmentVariable("webdriver.chrome.driver", path);
-            
-            Driver = new ChromeDriver();
+            var opts = new ChromeOptions
+            {
+                BinaryLocation = @"c:\Users\Арсений\AppData\Local\Google\Chrome\Application\chrome.exe"
+            };
+            Driver = new ChromeDriver(opts);
             Selenium = new WebDriverBackedSelenium(Driver, Utils.baseUrl);
             Selenium.Start();
             Selenium.WindowMaximize();
