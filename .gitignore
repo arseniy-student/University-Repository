@@ -48,10 +48,6 @@ _ReSharper*/
 # vim Temp Files
 *~
 
-#NuGet
-packages/
-*.nupkg
-
 #ncrunch
 *ncrunch*
 *crunch*.local.xml

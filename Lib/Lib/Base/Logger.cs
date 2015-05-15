@@ -31,7 +31,6 @@ namespace Lib.Base
             roller.StaticLogFileName = true;
             roller.ActivateOptions();
             hierarchy.Root.AddAppender(roller);
-
             var memory = new MemoryAppender();
             memory.ActivateOptions();
             hierarchy.Root.AddAppender(memory);
