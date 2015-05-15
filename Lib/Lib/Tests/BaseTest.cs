@@ -19,12 +19,8 @@ namespace Lib.Tests
         public void beforeClass()
         {
             Logger.Setup();
-            //var executingAssembly = Assembly.GetExecutingAssembly();
-            //var path = String.Format("{0}/{1}", System.IO.Path.GetDirectoryName(executingAssembly.Location), "chromedriver.exe");
-            //Environment.SetEnvironmentVariable("webdriver.chrome.driver", path);
-            var path = @"c:\Program Files (x86)\Mozilla Firefox\firefox.exe";
-            var binary = new FirefoxBinary(path);
-            Driver = new FirefoxDriver(binary,new FirefoxProfile());
+            const string path = @"c:\Program Files (x86)\Mozilla Firefox\firefox.exe";
+            Driver = new FirefoxDriver(new FirefoxBinary(path), new FirefoxProfile());
             Selenium = new WebDriverBackedSelenium(Driver, Utils.baseUrl);
             Selenium.Start();
             Selenium.WindowMaximize();
